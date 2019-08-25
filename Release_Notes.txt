@@ -1,0 +1,72 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Version : v1p3                          (Date : July 27, 2014)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Release Notes :
+1. All file names are modified as per the customer request(prifix with csi2tx)
+2. The file csi2tx_sensor_iface.v is modified to take care of the
+   delay in the external interface between the pixel_header_accept de-assertion
+   to packet_data_valid assertion
+3. Regressions are simulated with NCSIM version 10.20-s114
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Version : v1p2                            (Date : May 28, 2014)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Release Notes :
+1. This is Gold Release of CSI-2 Transmitter with 8 data Lane and 1 clock lane
+2. The modification in the Design
+   a) register_iface.v 
+      - AHB Out of address range error is updated(AHB slave address range 32'h00 to 32'h6c).
+3. The modification in the verification Environment
+   a) Assertion module (csi_tx_assertion.sv)is added for protocol checking. 
+   b) The decoder (csi_decoder_bfm.v) is added for the compression scheme
+   d) 11 testcases are added to improve the code coverage.
+4. The script(sim.csh) is updated to enable coverage metrics.
+    -New files(coverage_merge_vlog.csh,imc_verilog.do) are added to generate coverage report.
+    -please refer readme.txt for coverage report generation procedure.
+5. The release package includes the coverage reports and wavier list in the reports directory.
+6. CSI2_Transmitter_Testplan.xls is updated for the newly added testcases.
+7. The release package includes 209 test cases. 
+  - Additional testcases are added for the coverage and compression scheme.
+  - These testcases can be tested for different lane/frequency through script.(Refer Readme.txt)
+8. RTL code is updated/fixed for the internal BUGs
+9. Regressions are simulated with NCSIM version 10.20-s114
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Version : v1p1                              (Date : May 21, 2014)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Release Notes :
+1. This is Beta Release of CSI-2 Transmitter with 8 data Lane and 1 clock lane
+2. Beta release is tested for following category
+- All User Define data Type      - with min, max, incremental and random TC's
+- All RAW data type              - with min, max, incremental and random TC's
+- All RGB data type              - with min, max, incremental and random TC's
+- All YUV data type              - with min, max, incremental and random TC's
+- Generic(embedded, null, blank) - with min, max  and random TC's
+- Lane distribution TC's for data lane configuration (1 to 8) are newly added and tested
+- Miscellaneous TC's processor non operational frame number,Data bus is filled with zeros and one transaction are added and tested.
+- ULPS mode testcases are addeed.
+- Force TX stop mode test cases are added.
+- Data type and virtual channel interleaving test cases are added.
+- Short packet sequence test cases are added.
+- AHB register programming TC's are added and verified.
+- The above TC's are executed for all data lane configuration( 1 to 8)
+Note: For more details about the TC's please refer the CSI2_Transmitter_Testplan.xls in the document folder
+4. The release package includes 180 test cases - These cases can be re-run for different lane/frequency through script.(Refer Readme.txt)
+5. The user guide,testcase xls and the test environment is also updated
+6. RTL code is updated/fixed for the BUGs/feature enhancement/Requirement
+7. Regressions are simulated with NCSIM version 10.20-s114
+
+Release Notes:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Version : v1p0                              (Date : May 07, 2014)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Release Notes :
+1. This is an Alpha Release of CSI-2 Transmitter with 8 Data Lane and 1 Clock Lane
+2. Alpha release is tested for following data types with minimum set of test case
+  - All User Define data Type - with min, max, incremental and random TC's
+  - RAW8 data type            - with min, max, incremental and random TC's
+  - The above data types are executed for all data lane configuration( 1 to 8)
+3. The release package includes 38 test cases - These cases can be re-run for
+   different lane/frequency.
+4. Regressions are simulated with NCSIM version 10.20-s114
+
